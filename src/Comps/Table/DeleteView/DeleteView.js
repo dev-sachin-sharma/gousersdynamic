@@ -31,7 +31,7 @@ const DeleteView = ({userDetail}) => {
   }
   return (
     <div className="deleteView">
-      <h3>Are You sure You Wanna Delete?</h3>
+      <h3>Are You sure You Wanna Delete {userDetail.name}?</h3>
       <button className="success" onClick={()=>{handleDelete(userDetail.id)}}>Yes</button> 
       <button className="danger" onClick={handleCancel}>No</button> 
     </div>

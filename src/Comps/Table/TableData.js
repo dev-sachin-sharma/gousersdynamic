@@ -21,6 +21,7 @@ const TableData = () => {
   }, []);
 
   const handleSingleView = (detail) => {
+      toast.dismiss();
     toast(<SingleView userDetail={detail} />, {
       position: toast.POSITION.TOP_CENTER,
       autoClose: false,

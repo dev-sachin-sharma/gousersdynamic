@@ -1,15 +1,20 @@
 import React, { useState,useEffect } from "react";
 import "./Edit.scss";
+import {Link} from 'react-router-dom'
+import { toast } from "react-toastify";
 
 const EditView = (props) => {
   const [user, setUser] = useState(props && props.userDetail?.name);
   const [email, setEmail] = useState(props && props.userDetail?.email);
+  // toast.configure();
   const handleChange = (e) => {
     setUser(e.target.value);
   };
   const handleChange1 = (e) => {
     setEmail(e.target.value);
   };
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = props?.fetchId
@@ -34,6 +39,7 @@ const EditView = (props) => {
     }
   };
 useEffect(()=>{
+   toast.dismiss();
   setUser(props.userDetail.name)
   setEmail(props.userDetail.email)
 },[props.userDetail.name])
@@ -41,6 +47,7 @@ useEffect(()=>{
     <div>
       <div className="container">
         <div className="form form--signup">
+          <div className="closeEdit"><Link to="/">X</Link></div>
           <div className="form--heading">Welcome To Update</div>
           <form
             onSubmit={(e) => {
