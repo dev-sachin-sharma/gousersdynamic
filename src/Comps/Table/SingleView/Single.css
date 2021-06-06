@@ -1,0 +1,14 @@
+.singleUserContainer{
+    background: linear-gradient(to right, #002f69, #32dce8);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userContainer{
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
