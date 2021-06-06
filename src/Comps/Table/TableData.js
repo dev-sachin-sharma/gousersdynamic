@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { setAllUser } from "../../redux/actions/userAction";
 import { toast } from "react-toastify";
 import SingleView from "./SingleView/SingleView";
@@ -9,16 +9,9 @@ import DeleteView from './DeleteView/DeleteView.js';
 
 const TableData = () => {
   const usersDetails = useSelector((state) => state.allUsers.users);
-  const dispatch = useDispatch();
   toast.configure();
 
-  useEffect(() => {
-    fetch("https://gorest.co.in/public-api/users")
-      .then((res) => res.json())
-      .then((users) => {
-        dispatch(setAllUser(users.data));
-      });
-  }, []);
+ 
 
   const handleSingleView = (detail) => {
       toast.dismiss();

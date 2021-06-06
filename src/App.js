@@ -4,7 +4,6 @@ import TableSection from './Comps/Table/TableSection'
 import {BrowserRouter as Router ,Route,Switch} from 'react-router-dom'
 import SingleTableData from './Comps/Table/SingleTableData'
 
-
 const App = () => {
   return (
 <div className="App">

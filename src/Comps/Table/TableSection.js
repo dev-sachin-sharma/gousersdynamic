@@ -1,13 +1,25 @@
 import React,{useEffect} from "react";
 import TableData from "./TableData";
 import styles from "./TableSection.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { setAllUser } from "../../redux/actions/userAction";
+import {BeatLoader} from 'react-spinners'
 
 const TableSection = () => {
+ const usersDetails = useSelector((state) => state.allUsers.users);
+  usersDetails.length > 0 ? console.log("stop loader") : console.log("load loaders")
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    fetch("https://gorest.co.in/public-api/users")
+      .then((res) => res.json())
+      .then((users) => {
+        dispatch(setAllUser(users.data));
+      });
+  }, []);
 
-    useEffect(()=>{
-        
-    },[])
-  return (
+
+  return usersDetails.length > 0 ? (
     <section>
       <h1 className={styles.tableHeading}>User Details</h1>
       <div className={styles.tblHeader}>
@@ -30,7 +42,12 @@ const TableSection = () => {
         </table>
       </div>
     </section>
-  );
+  ) : (
+    <>
+   <div style={{marginTop:"100px"}}><BeatLoader size={50} color="white"/></div>
+    </>
+  )
 };
 
 export default TableSection;
+
