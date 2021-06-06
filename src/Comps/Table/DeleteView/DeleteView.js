@@ -1,10 +1,8 @@
 import React from "react";
 import './Delete.css'
-// import { useDispatch, useSelector } from "react-redux";
-// import { setAllUser } from '../../redux/actions/userAction';
+
 
 const DeleteView = ({userDetail}) => {
-  // const dispatch = useDispatch();
   const handleDelete=(id)=>{
     fetch(`https://gorest.co.in/public-api/users/${id}`,{
       method:'DELETE',

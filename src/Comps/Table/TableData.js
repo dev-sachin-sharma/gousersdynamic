@@ -29,6 +29,7 @@ const TableData = () => {
   };
 
   const handleDeleteView = (detail) => {
+    toast.dismiss();
     toast(<DeleteView userDetail={detail} />, {
       position: toast.POSITION.TOP_CENTER,
       autoClose: false,
