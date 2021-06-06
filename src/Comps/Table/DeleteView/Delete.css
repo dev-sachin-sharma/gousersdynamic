@@ -1,7 +1,7 @@
 .Toastify__toast-container {
-    width: 50%;
+    /* width: 50%; */
     margin: 10px auto;
-    min-width: 320px;
+    /* min-width: 1; */
 }
 .deleteView :is(h3){
     text-align: center;
